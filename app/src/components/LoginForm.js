@@ -58,7 +58,7 @@ const LoginForm =  ({ addUser }) => {
         </div>
         <button id='form-login-button'>Login</button>
       </form>
-      <Notification message={message}></Notification>
+      <Notification message={message} feedback='bad'/>
     </>
   )
 }

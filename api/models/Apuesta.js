@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose')
 
 const apuestaSchema = new Schema({
-  content: String,
+  content: [String],
   date: Date,
   user: {
     type: Schema.Types.ObjectId,

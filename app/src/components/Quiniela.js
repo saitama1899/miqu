@@ -1,26 +1,22 @@
-const Quiniela = ({ quiniela }) => {
-  console.log(quiniela);
+import Partido from "./Partido";
+
+const Quiniela = ({ quiniela, apuesta = null }) => {
+  const { partidos } = quiniela
+  const apuestaRealizada = apuesta ? apuesta.content : null
+
   return (
     <div>
-      <table>
-        <tr>
-          <th>Partidos</th>
-          <th colspan="2" >Resultado</th>
-          <th></th>
-          <th></th>
-        </tr>
-        <tr>
-          <td>Español vs Barcelona</td>
-          <td>1</td>
-          <td>x</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-        </tr>
-      </table>
+      { partidos
+          ? <table><tbody>
+              {partidos.map((partido, i) => (
+                <Partido 
+                  key={partido.local+partido.visitante} 
+                  partido={partido}
+                  apuesta={apuestaRealizada}
+                  index={i} />
+              ))}
+            </tbody></table>
+          : 'Cargando...' }
     </div>
   )
 }

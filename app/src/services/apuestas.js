@@ -15,22 +15,11 @@ const getApuestas = (token) => {
 const createApuesta = (apuesta, token) => {
   const config = {
     headers: {
-      Authorization: token
+      Authorization: `Bearer ${token}`
     }
   }
   const request = axios.post(baseUrl, apuesta, config)
   return request.then(response => response.data)
 }
-
-// const updateNote = (id, newObject) => {
-//   const config = {
-//     headers: {
-//       Authorization: token
-//     }
-//   }
-
-//   const request = axios.put(`${baseUrl}/${id}`, newObject, config)
-//   return request.then(response => response.data)
-// }
 
 export default { getApuestas, createApuesta }

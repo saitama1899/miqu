@@ -1,6 +1,13 @@
 const quinielasRouter = require('express').Router()
 const Quiniela = require('../models/Quiniela')
 
+quinielasRouter.get('/actual', async (req, res) => {
+  try {
+    const quinielas = await Quiniela.findOne({}).sort({_id: -1}).limit(1)
+    res.json(quinielas)
+  } catch (e) { console.error(e) }
+})
+
 quinielasRouter.get('/', async (req, res) => {
   try {
     const quinielas = await Quiniela.find({})

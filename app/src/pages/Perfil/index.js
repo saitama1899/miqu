@@ -9,20 +9,16 @@ const Perfil = () => {
 
   const { user } = useContext(UserContext)
   const { apuestas, loading } = useApuestas()
-  
-  // console.log(user)
 
   return (
     <>
-      {
-        user
+      { user && apuestas
           ? <>
               <h1>Mi perfil ({user.name})</h1>
               <ApuestasList apuestas={apuestas} />
               { loading ? 'Cargando...' : '' }
             </>
-          : <Navigate replace to="/" />
-      }  
+          : <Navigate replace to="/" /> }  
     </>
   )
 }

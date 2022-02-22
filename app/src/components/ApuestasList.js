@@ -5,15 +5,18 @@ const ApuestasList = ({ apuestas }) => {
   return (
     <>
       <h3>Últimas apuestas realizadas</h3>
-      <ul>
-        {apuestas
-          .map((apuesta) => (
-            <Apuesta
-              key={apuesta.id}
-              apuesta={apuesta}
-            />
-          ))}
-      </ul>
+      { apuestas
+          ?
+            <ol>
+            {apuestas
+              .map((apuesta) => (
+                <Apuesta
+                  key={apuesta.id}
+                  apuesta={apuesta}
+                />
+              ))}
+            </ol>
+          : 'Aún no hay apuestas asociadas a tu cuenta' }
     </>
   )
 }

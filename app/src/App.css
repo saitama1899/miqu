@@ -1,0 +1,20 @@
+body {
+  margin: 0 auto;
+  display: flex;
+  padding: 10px;
+}
+
+span.acierto {
+  color:green;
+  font-weight:bold;
+}
+span.fallo {
+  color:red;
+  font-weight:bold;
+}
+
+table {
+  background:#f4f5ed;
+  margin-bottom: 15px;
+  padding: 10px;
+}

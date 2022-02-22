@@ -8,9 +8,8 @@ const userExtractor = require('../middleware/userExtractor')
 apuestasRouter.get('/', userExtractor, async (req, res) => {
   const { userId } = req
   const apuestas = await Apuesta.find({user: userId})
-    // .populate('user', { username: 1, name: 1 })
     .populate('quiniela', { fecha_sorteo: 1, id_sorteo: 1, partidos: 1 })
-    .limit(1)
+    .limit(3)
   res.json(apuestas)
 })
 

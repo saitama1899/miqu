@@ -16,14 +16,12 @@ const Header = () => {
     <header>
       <Link to="/" style={inlineStyles}>Home</Link>
       <Link to="/apuesta-gratis" style={inlineStyles}>Apuesta gratis</Link>
-      {
-        user
+      { user
           ? <>
               <Link to="/mi-perfil" style={inlineStyles}>Mi perfil</Link>
               <Link to="/login" style={inlineStyles} onClick={() => {handleLogOut()}}>Cerrar sesión</Link>
             </>
-          : <Link to="/login" style={inlineStyles}>Iniciar sesión</Link>
-      }
+          : <Link to="/login" style={inlineStyles}>Iniciar sesión</Link> }
     </header>
   )
 }

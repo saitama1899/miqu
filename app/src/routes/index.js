@@ -5,12 +5,13 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 // Paginas
 import Login from '../pages/Login'
 import Perfil from '../pages/Perfil'
+import Apuesta from '../pages/Apuesta'
 // Componentes
 import Header from '../components/Header'
 
 // Contenido placeholder
 const Home = () => <h1>Miqu</h1>
-const Apuesta = () => <h1>Apuesta gratis</h1>
+
 
 const AppRoutes = () => {
 

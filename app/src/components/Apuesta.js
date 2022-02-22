@@ -3,8 +3,7 @@ import Quiniela from "./Quiniela"
 const Apuesta = ({ apuesta }) => {
   return (
     <li>
-      Boleto: {apuesta.content}
-      <Quiniela quiniela={ apuesta.quiniela }/>
+      <Quiniela apuesta={ apuesta } quiniela={ apuesta.quiniela }/>
     </li>
   )
 }
