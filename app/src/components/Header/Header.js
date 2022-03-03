@@ -12,6 +12,7 @@ const Header = () => {
   const { user } = useContext(UserContext)
   const { handleLogOut } = useUser()
 
+
   const [visible, setVisible] = useState(true)
   const toggleVisibility = () => setVisible(!visible)
   const menuMobileVisible = visible ? 'hidden' : ''
@@ -26,7 +27,10 @@ const Header = () => {
             <li><Link to='/apuesta-gratis' className='linkMenu' onClick={toggleVisibility}>Apuesta gratis</Link></li>
             { user ? <>
                 <li><Link to='/mi-perfil' className='flex linkMenu' onClick={toggleVisibility}>{user.name}</Link></li>
-                <li><Link to='/login' onClick={() => {handleLogOut()}} className='linkMenu'  onClick={toggleVisibility}>Cerrar sesión</Link></li>
+                <li><Link to='/login' onClick={() => {
+                  handleLogOut() 
+                  toggleVisibility()}
+                } className='linkMenu'>Cerrar sesión</Link></li>
               </>
               : <>
               <li><Link to='/login' className='linkMenu'  onClick={toggleVisibility}>Iniciar sesión</Link></li>
