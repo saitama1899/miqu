@@ -12,15 +12,17 @@ const getApuestas = (token) => {
   return request.then(response => response.data)
 }
 
-const createApuesta = (apuesta, token) => {
+const createApuesta = async (apuesta, token) => {
+  console.log(1)
   const config = {
     headers: {
       Authorization: `Bearer ${token}`
     }
   }
-  const request = axios.post(baseUrl, apuesta, config)
-  request.then(response => {
-    return response.data    
+  await axios.post(baseUrl, apuesta, config)
+    .then(response => {
+      console.log(2)
+      return response.data    
   })
 
 }

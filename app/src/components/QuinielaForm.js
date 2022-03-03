@@ -38,14 +38,15 @@ const QuinielaForm = ({ quiniela, addApuesta }) => {
           setError(true)
           setApuestaRealizada(false)
           addNotification('No se ha podido realizar la apuesta.')
+          console.log('Error', e);
         }
       } else {
         setError(true)
         addNotification('Faltan resultados por completar.')
-        setTimeout(() => {
-          addNotification(null)
-        }, 5000)
-      }      
+      }    
+      setTimeout(() => {
+        addNotification(null)
+      }, 5000)  
     } else {
       navigate('/login')
     }

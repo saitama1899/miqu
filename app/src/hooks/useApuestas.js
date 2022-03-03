@@ -23,9 +23,9 @@ export const useApuestas = () => {
     }
   }, [])
 
-  const addApuesta = (apuesta) => {
-    apuestaService
-      .createApuesta(apuesta, user.token)
+  const addApuesta = async (apuesta) => {
+
+    await apuestaService.createApuesta(apuesta, user.token)
       .then(newApuesta => {
         setApuestas([...apuestas, newApuesta])
       })      

@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Notification from '../Notification'
 import LoadingSpinner from '../LoadingSpinner'
 // Servicios
-import { signup } from '../../services/users'
+import { signup, login } from '../../services/users'
 // Hooks
 import { useNotification } from '../../hooks/useNotification'
 import { useLoading } from '../../hooks/useLoading'
@@ -27,10 +27,14 @@ const SignUpForm =  ({ addUser }) => {
     if (validateInputString(username, 'username') && validateInputString(password, 'password') &&
     validateInputString(name, 'name') && validateInputString(email, 'email')) {
       try {
-        const user = await signup({
+        await signup({
           username,
           name,
           email,
+          password
+        })
+        const user = await login({
+          username,
           password
         })
         addUser(user)
