@@ -40,6 +40,12 @@ app.use('/api/apuestas', apuestasRouter)
 app.use(notFound)
 app.use(handleErrors)
 
+if (NODE_ENV === 'production') {
+  app.get("*", function (request, response) {
+    response.sendFile(path.resolve(__dirname, "../app/build", "index.html"));
+  });
+}
+
 const PORT = process.env.PORT
 const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
