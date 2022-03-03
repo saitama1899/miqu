@@ -32,11 +32,11 @@ app.use(logger)
 app.use(express.static('../app/build'))
 
 // Para el deploy refresh
-if (NODE_ENV === 'production') {
+// if (NODE_ENV === 'production') {
   app.get("/", function (request, response) {
     response.sendFile(path.resolve(__dirname, "build", "index.html"));
   });
-}
+// }
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/quinielas', quinielasRouter)
