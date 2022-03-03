@@ -23,14 +23,14 @@ const Header = () => {
         <DropdownButtonMenu toggleVisibility={toggleVisibility} />
         <div className={menuMobileVisible + ' w-full md:flex md:items-center md:w-auto' }>
           <ul className='menu'>
-            <li><Link to='/apuesta-gratis' className='linkMenu'>Apuesta gratis</Link></li>
+            <li><Link to='/apuesta-gratis' className='linkMenu' onClick={toggleVisibility}>Apuesta gratis</Link></li>
             { user ? <>
-                <li><Link to='/mi-perfil' className='flex linkMenu'>{user.name}</Link></li>
-                <li><Link to='/login' onClick={() => {handleLogOut()}} className='linkMenu'>Cerrar sesión</Link></li>
+                <li><Link to='/mi-perfil' className='flex linkMenu' onClick={toggleVisibility}>{user.name}</Link></li>
+                <li><Link to='/login' onClick={() => {handleLogOut()}} className='linkMenu'  onClick={toggleVisibility}>Cerrar sesión</Link></li>
               </>
               : <>
-              <li><Link to='/login' className='linkMenu'>Iniciar sesión</Link></li>
-              <li><Link to='/registro' className='linkMenu text-coral-600'>Registro</Link></li>
+              <li><Link to='/login' className='linkMenu'  onClick={toggleVisibility}>Iniciar sesión</Link></li>
+              <li><Link to='/registro' className='linkMenu text-coral-600'  onClick={toggleVisibility}>Registro</Link></li>
             </> }
           </ul>
         </div>
