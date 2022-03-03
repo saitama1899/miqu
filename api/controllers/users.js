@@ -1,6 +1,7 @@
 const usersRouter = require('express').Router()
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
+const { checkRequired } = require('../utils/utils')
 
 usersRouter.get('/', async (req, res) => {
   try {
@@ -11,20 +12,33 @@ usersRouter.get('/', async (req, res) => {
 
 usersRouter.post('/', async (req, res) => {
   const { body } = req
-  const { username, name, password } = body
+  const { username, name, email, password } = body
 
-  const saltRounds = 10
-  const passwordHash = await bcrypt.hash(password, saltRounds)
+  if (checkRequired([username, name, password, email])) {
 
-  const user = new User({
-    username,
-    name,
-    passwordHash
-  })
-  try {
-    const savedUser = await user.save()
-    res.status(201).json(savedUser)
-  } catch (e) { res.status(400).json(e) }
+    if (username.length > 20 || password.length > 20 || name.length > 25 || email.length > 35) {
+      return res.status(400).json({
+        error: 'invalid credentials length'
+      })
+    }
+
+    const saltRounds = 10
+    const passwordHash = await bcrypt.hash(password, saltRounds)
+
+    const user = new User({
+      username,
+      name,
+      email,
+      passwordHash
+    })
+    try {
+      const savedUser = await user.save()
+      res.status(201).json(savedUser)
+    } catch (e) { 
+      console.log(e);
+      res.status(400).json(e) 
+    }    
+  }
 })
 
 module.exports = usersRouter

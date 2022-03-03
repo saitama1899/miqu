@@ -23,13 +23,12 @@ export const useApuestas = () => {
     }
   }, [])
 
-  // Metodo que utilizará el componente formNote para actualizar el state de notas
   const addApuesta = (apuesta) => {
     apuestaService
       .createApuesta(apuesta, user.token)
       .then(newApuesta => {
         setApuestas([...apuestas, newApuesta])
-      })
+      })      
   }
 
   return {

@@ -1,22 +1,21 @@
-import UserContext from '../../context/UserContext'
-import { useContext } from 'react'
-import { useQuinielas } from '../../hooks/useQuinielas'
-import { useApuestas } from '../../hooks/useApuestas'
-import Quiniela from '../../components/Quiniela'
-import QuinielaForm from '../../components/QuinielaForm'
+import Titulo from '../../components/Titulo'
+import JuegoCard from '../../components/JuegoCard'
 const Apuesta = () => {
-
-  const { user } = useContext(UserContext)
-  const { quiniela } = useQuinielas()
-  const { addApuesta } = useApuestas()
-  console.log(quiniela);
   return (
     <>
-      <h1>Apuesta gratis</h1>
-      { user
-          ? <QuinielaForm quiniela={quiniela} addApuesta={addApuesta} />
-          : <Quiniela quiniela={quiniela} /> }
-
+      <Titulo titulo={'Apuesta gratis'} subtitulo={'Sin correr riesgos'} />
+      <div className='flex flex-wrap -mx-4 slide-in-bottom'>
+        <JuegoCard 
+          titulo={'La quiniela'} 
+          mensaje={'La quiniela de toda la vida, pero gratis!'} 
+          miniatura={'img/min-quiniela.png'}
+          url={'/quiniela'} />
+        <JuegoCard 
+          titulo={'Próximamente...'} 
+          mensaje={'Pronto se uniran a la colección una amplia variedad de juegos.'} 
+          miniatura={'img/min-soon.png'}
+          url={'#'} />
+      </div>
     </>
   )
 }

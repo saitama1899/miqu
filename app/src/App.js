@@ -1,6 +1,3 @@
-// Estilos
-import './App.css';
-
 import AppRoutes from './routes'
 // Context
 import { UserContextProvider} from './context/UserContext'

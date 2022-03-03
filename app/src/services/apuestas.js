@@ -19,7 +19,10 @@ const createApuesta = (apuesta, token) => {
     }
   }
   const request = axios.post(baseUrl, apuesta, config)
-  return request.then(response => response.data)
+  request.then(response => {
+    return response.data    
+  })
+
 }
 
 export default { getApuestas, createApuesta }

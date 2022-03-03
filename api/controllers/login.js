@@ -6,6 +6,13 @@ const jwt = require('jsonwebtoken')
 loginRouter.post('/', async (req, res) => {
   const { body } = req
   const { username, password } = body
+
+  if (username.length > 20 || password.length > 20) {
+    return res.status(400).json({
+      error: 'username or password too long'
+    })
+  }
+
   const user = await User.findOne({ username })
   const passWordCorrect = user === null
     ? false
@@ -33,6 +40,7 @@ loginRouter.post('/', async (req, res) => {
   res.status(200).send({
     name: user.name,
     username: user.username,
+    email: user.email,
     token
   })
 })

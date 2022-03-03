@@ -1,4 +1,4 @@
-import LoginForm from '../../components/LoginForm'
+import LoginForm from '../../components/Login/LoginForm'
 import { useUser } from '../../hooks/useUser'
 import { Navigate } from 'react-router-dom'
 
@@ -13,7 +13,7 @@ const Login = () => {
     <>
     {
       user
-        ? <Navigate replace to="/" />
+        ? <Navigate replace to='/mi-perfil' />
         : <LoginForm addUser={addUser} />
     }  
     </>

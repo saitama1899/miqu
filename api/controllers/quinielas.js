@@ -28,6 +28,9 @@ quinielasRouter.post('/', async (req, res, next) => {
       res.status(400)
       next(e)
     }
+  } else {
+    res.json({error: 'clave incorrecta'})
+    res.status(400).end()
   }
 })
 
@@ -35,12 +38,16 @@ quinielasRouter.put('/:id', async (req, res, next) => {
   const { id } = req.params
   const { body } = req
   const { p, quiniela } = body
+
   if (p === process.env.SECRET) {
     try {
       await Quiniela.findByIdAndUpdate(id, quiniela, { new: true })
       res.json(quiniela)
       res.status(200).end()
     } catch (e) { next(e) }
+  } else {
+    res.json({error: 'clave incorrecta'})
+    res.status(400).end()
   }
 })
 

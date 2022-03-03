@@ -21,7 +21,7 @@ const getDateString = (date) => {
   return year + month + day
 }
 
-const getQuiniela = async (date) => {
+const getLastQuiniela = async (date) => {
   while (date <= end) {
     const dataString = getDateString(date)
     const res = await sendGetRequest(dataString)
@@ -33,4 +33,8 @@ const getQuiniela = async (date) => {
   }
 }
 
-module.exports = getQuiniela
+module.exports = {
+  getLastQuiniela,
+  sendGetRequest,
+  getDateString
+}

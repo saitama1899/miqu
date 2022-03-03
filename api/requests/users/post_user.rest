@@ -2,9 +2,10 @@ POST  http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "username": "Usuario desde Vcode requests 1",
+  "username": "holfae",
   "name": "Eric",
-  "password": "contraseña_eric",
+  "email": "eric.lorien92@gmail.com",
+  "password": "Contrasena-eric3",
   "apuestas": []
 }
  

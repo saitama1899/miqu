@@ -19,7 +19,9 @@ const quinielaSchema = new Schema({
   escrutinio: Array,
   partidos: Array,
   temporada: String,
-  jornada: String
+  jornada: String,
+  elige8: Object,
+  escrutinioElige8: Array
 })
 
 const Quiniela = model('Quiniela', quinielaSchema)
