@@ -51,11 +51,11 @@
   .content {
     @apply container px-4 h-full
   }
-  .succesAlert {
-    @apply text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800
+  .successAlert {
+    @apply text-green-700 bg-green-50 rounded-lg 
   }
   .errorAlert {
-    @apply text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800
+    @apply text-red-700 bg-red-50 rounded-lg
   }
   /* Home */
   /* //////////////// */
@@ -173,7 +173,7 @@
     background-size: 17px 17px;
   }
   .radioButtonQuiniela:hover {
-    background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8v3dvPQAINgL6qZPXRwAAAABJRU5ErkJggg==) no-repeat center center;
+    background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==) no-repeat center center;
     background-size: 17px 17px;
   }
   .radioButtonQuiniela:focus {

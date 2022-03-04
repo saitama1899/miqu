@@ -23,6 +23,7 @@ const QuinielaForm = ({ quiniela, addApuesta }) => {
   }
 
   const handleSubmit = async (e) => {
+    console.log(0);
     e.preventDefault()
     if (user) {
       if(!(apuesta.includes(undefined)) && apuesta.length === 15){
@@ -79,7 +80,7 @@ const QuinielaForm = ({ quiniela, addApuesta }) => {
             <div className='flex flex-wrap justify-between'>
               <button type='submit' 
                 className='botonApostar' >Apostar</button>
-              <button onClick={handleReset}>Reiniciar</button>
+              <span onClick={handleReset} className='cursor-pointer'>Reiniciar</span>
             </div>
           </form>
 

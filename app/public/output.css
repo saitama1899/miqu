@@ -616,24 +616,20 @@ h1 {
   padding-right: 1rem;
 }
 
+.successAlert {
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 253 244 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+
 .errorAlert {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
-}
-
-@media (prefers-color-scheme: dark) {
-  .errorAlert {
-    --tw-bg-opacity: 1;
-    background-color: rgb(254 202 202 / var(--tw-bg-opacity));
-  }
-
-  .errorAlert {
-    --tw-text-opacity: 1;
-    color: rgb(153 27 27 / var(--tw-text-opacity));
-  }
 }
 
 /* Home */
@@ -1305,7 +1301,7 @@ h1 {
 }
 
 .radioButtonQuiniela:hover {
-  background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8v3dvPQAINgL6qZPXRwAAAABJRU5ErkJggg==) no-repeat center center;
+  background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==) no-repeat center center;
   background-size: 17px 17px;
 }
 
@@ -1704,11 +1700,6 @@ span.fallo {
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
 }
@@ -1826,6 +1817,11 @@ span.fallo {
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
@@ -1909,11 +1905,6 @@ span.fallo {
 
 .hover\:cursor-pointer:hover {
   cursor: pointer;
-}
-
-.hover\:bg-slate-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-slate-100:hover {
@@ -2017,16 +2008,16 @@ span.fallo {
     width: 25%;
   }
 
+  .lg\:w-6\/12 {
+    width: 50%;
+  }
+
   .lg\:w-\[74\%\] {
     width: 74%;
   }
 
   .lg\:w-\[24\%\] {
     width: 24%;
-  }
-
-  .lg\:w-6\/12 {
-    width: 50%;
   }
 
   .lg\:items-start {

@@ -31,12 +31,6 @@ app.use(logger)
 // Para servir nuestra app (frontend) desde la api (servidor backend)
 app.use(express.static('../app/build'))
 
-// Para el deploy refresh
-// if (NODE_ENV === 'production') {
-  app.get("/", function (request, response) {
-    response.sendFile(path.resolve(__dirname, "build", "index.html"));
-  });
-// }
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/quinielas', quinielasRouter)
@@ -45,8 +39,6 @@ app.use('/api/apuestas', apuestasRouter)
 // Aqui solo llegará si no entra en ninguna de las de arriba
 app.use(notFound)
 app.use(handleErrors)
-
-
 
 const PORT = process.env.PORT
 const server = app.listen(PORT, () => {

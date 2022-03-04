@@ -24,6 +24,15 @@ const quinielaSchema = new Schema({
   escrutinioElige8: Array
 })
 
+// Con esto modificamos los campos que devolverá la DB para mostrarlos modificados u ocultar algunos
+quinielaSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id
+    delete returnedObject._id
+    delete returnedObject.__v
+  }
+})
+
 const Quiniela = model('Quiniela', quinielaSchema)
 
 module.exports = Quiniela

@@ -12,7 +12,7 @@ const Partido = ({ partido, index, apuesta }) => {
           {partido.local} - {partido.visitante}</span>
       </label>
       <div className='resultados'>
-        <span className="hidden md:inline">{  partido.marcador ? partido.marcador : partido.fecha }</span>
+        <span className="hidden text-gray-500 md:inline">{  partido.marcador ? partido.marcador : partido.fecha }</span>
         <span>{ partido.signo }</span>
         <span className = { resultado }>{ apuesta[index] }</span>
       </div>
