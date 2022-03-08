@@ -1,1 +1,1 @@
-<img src="https://i.ibb.co/brsx4CF/screens.png" width="100%">
+<img src="https://i.postimg.cc/y60KyFKH/screens.png" width="100%">
