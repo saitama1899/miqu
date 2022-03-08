@@ -11,7 +11,6 @@ const express = require('express')
 const logger = require('./middleware/logger')
 const handleErrors = require('./middleware/handleErrors')
 const notFound = require('./middleware/notFound')
-require('./middleware/quinielaUpdater')
 
 // Controladores
 const usersRouter = require('./controllers/users')
@@ -44,6 +43,9 @@ const PORT = process.env.PORT
 const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
+
+// Funciones para automatizar datos del juego de la quiniela a apuestas del estado
+require('./middleware/quinielaUpdater')
 
 // Exports para los tests
 module.exports = { app, server }

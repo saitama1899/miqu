@@ -1,5 +1,7 @@
 import axios from 'axios'
-const baseUrl = '/api/quinielas/actual'
+import  { GetAPIUrl } from '../utils/GetAPIUrl'
+
+const baseUrl = GetAPIUrl() + '/api/quinielas/actual'
 
 const getQuiniela = () => {
   const request = axios.get(baseUrl)

@@ -10,7 +10,8 @@ module.exports = {
         'coral-600': '#d90429',
         'coral-900': '#97001a',
         'coral-50': '#d88896',
-        'coral-tr': '#eacad2c4',
+        'coral-tr': '#eacad2f5',
+        'slate-350': '#a8b4c3',
         'dark-silver-tr': '#95a7b7e3'
       }
     },

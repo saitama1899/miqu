@@ -25,7 +25,7 @@
 @layer components {
   /* Header / Navbar */
   .navMenu {
-    @apply flex flex-wrap justify-around py-2 mx-auto items-center px-4 text-lg bg-white bg-opacity-80 
+    @apply flex flex-wrap justify-around py-2 mx-auto items-center px-4 text-lg bg-white bg-opacity-80 sticky
   }
   .menu {
     @apply pt-4 text-lg text-midnight md:flex md:justify-between md:pt-0 
@@ -43,7 +43,7 @@
   /* Content */
 
   body {
-    @apply leading-normal tracking-normal text-midnight bg-silver
+    @apply leading-normal tracking-normal text-midnight bg-silver 
   }
   h1 {
     @apply my-2 text-xl md:text-3xl text-midnight font-bold leading-tight text-center

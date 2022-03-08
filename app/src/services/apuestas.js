@@ -1,5 +1,7 @@
 import axios from 'axios'
-const baseUrl = '/api/apuestas'
+import  { GetAPIUrl } from '../utils/GetAPIUrl'
+
+const baseUrl = GetAPIUrl() + '/api/apuestas'
 
 const getApuestas = (token) => {
   const config = {

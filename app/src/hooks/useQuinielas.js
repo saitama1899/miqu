@@ -1,15 +1,19 @@
 import { useEffect, useState } from 'react'
 import quinielaService from '../services/quinielas'
+import { useLoading } from '../hooks/useLoading'
 
 export const useQuinielas = () => {
   const [quiniela, setQuiniela] = useState([])
   const [fechaLimite, setFechaLimite] = useState('')
+  const { loading, addLoading } = useLoading()
 
   // Get quiniela
   useEffect(() => {
+    addLoading(true)
     quinielaService.getQuiniela().then(quiniela => {
       setQuiniela(quiniela)
-      setFechaLimite(updateFecha(quiniela))      
+      setFechaLimite(updateFecha(quiniela))  
+      addLoading(false)    
     })
   }, [])
 
@@ -32,6 +36,7 @@ export const useQuinielas = () => {
 
   return {
     quiniela,
-    fechaLimite
+    fechaLimite,
+    loading
   }
 }

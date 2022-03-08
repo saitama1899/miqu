@@ -39,7 +39,7 @@ const Apuesta = ({ apuesta }) => {
           <small>Acertados {aciertos}/{aciertos+fallos}</small>
         </span>
         <button className='absolute top-0 right-0 mt-4 mr-6 text-xl font-semibold leading-none bg-transparent outline-none focus:outline-none'>
-          <span>⯆</span>
+          <span><b>+</b></span>
         </button>
       </div>
       <div className={visible ? '' : 'hidden'}>

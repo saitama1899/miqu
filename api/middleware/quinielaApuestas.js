@@ -1,7 +1,7 @@
 const axios = require('axios')
 
-const urlApiOficial = 'https://www.loteriasyapuestas.es/servicios/fechav3'
-const end = new Date('02/20/2030')
+const apiGetQuiniela = 'https://www.loteriasyapuestas.es/servicios/fechav3'
+const apiGetNext = 'https://www.loteriasyapuestas.es/servicios/proximosv3'
 
 const sendGetRequest = async (date) => {
   const params = {
@@ -9,7 +9,7 @@ const sendGetRequest = async (date) => {
     fecha_sorteo: date
   }
   try {
-    const res = await axios.get(urlApiOficial, { params })
+    const res = await axios.get(apiGetQuiniela, { params })
     return res.data
   } catch (err) { console.error(err) }
 }
@@ -22,15 +22,20 @@ const getDateString = (date) => {
 }
 
 const getLastQuiniela = async (date) => {
-  while (date <= end) {
-    const dataString = getDateString(date)
-    const res = await sendGetRequest(dataString)
+  const params = {
+    game_id: 'LAQU',
+    num: 1,
+    c: date
+  }
+  try {
+    const next = await axios.get(apiGetNext, { params })
+    const fechaNext = next.data[0].fecha
+    const fechaDef = fechaNext.split(' ')
+    const res = await sendGetRequest(fechaDef[0].replaceAll('-', ''))
     if (res[0].fecha_sorteo) {
       return res[0]
     }
-    const newDate = date.setDate(date.getDate() + 1)
-    date = new Date(newDate)
-  }
+  } catch (err) { console.error(err) }
 }
 
 module.exports = {

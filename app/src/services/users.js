@@ -1,6 +1,7 @@
 import axios from 'axios'
+import  { GetAPIUrl } from '../utils/GetAPIUrl'
 
-const baseUrl = '/api'
+const baseUrl = GetAPIUrl() + '/api'
 
 export const login = async credentials => {
   const { data } = await axios.post(baseUrl+'/login', credentials)

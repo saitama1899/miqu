@@ -469,6 +469,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 /* Header / Navbar */
 
 .navMenu {
+  position: -webkit-sticky;
+  position: sticky;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -1475,6 +1477,10 @@ span.fallo {
   margin-bottom: 0.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -1493,10 +1499,6 @@ span.fallo {
 
 .mr-\[3px\] {
   margin-right: 3px;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .mt-6 {
@@ -1680,6 +1682,10 @@ span.fallo {
   background-color: transparent;
 }
 
+.bg-coral-tr {
+  background-color: #eacad2f5;
+}
+
 .bg-midnight {
   --tw-bg-opacity: 1;
   background-color: rgb(43 45 66 / var(--tw-bg-opacity));
@@ -1695,9 +1701,9 @@ span.fallo {
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
-.bg-slate-400 {
+.bg-slate-350 {
   --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+  background-color: rgb(168 180 195 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-90 {

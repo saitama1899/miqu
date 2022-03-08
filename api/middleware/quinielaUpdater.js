@@ -5,6 +5,7 @@ const axios = require('axios')
 
 const { LOCAL_URL, PROD_URL, NODE_ENV, PORT } = process.env
 
+
 const reqUrl = NODE_ENV === 'development'
   ? LOCAL_URL + `:${PORT}`
   : PROD_URL
@@ -32,6 +33,9 @@ const updateResultados = async () => {
     }
   } catch(e) { console.error(e.response.data.error) }
 }
+
+// quinielaUpdate()
+// updateResultados()
 setInterval(() => {
   quinielaUpdate()
   updateResultados()
